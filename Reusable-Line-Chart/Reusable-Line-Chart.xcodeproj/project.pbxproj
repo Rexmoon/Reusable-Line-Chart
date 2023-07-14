@@ -13,6 +13,8 @@
 		263429A22A61F0C5008E808D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263429A02A61F0C5008E808D /* Main.storyboard */; };
 		263429A42A61F0C7008E808D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 263429A32A61F0C7008E808D /* Assets.xcassets */; };
 		263429A72A61F0C7008E808D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263429A52A61F0C7008E808D /* LaunchScreen.storyboard */; };
+		2658061F2A61F1BD00F72F4A /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 2658061E2A61F1BD00F72F4A /* DGCharts */; };
+		265806212A61F1D600F72F4A /* ReusableLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265806202A61F1D600F72F4A /* ReusableLineChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,7 @@
 		263429A32A61F0C7008E808D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		263429A62A61F0C7008E808D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		263429A82A61F0C7008E808D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		265806202A61F1D600F72F4A /* ReusableLineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableLineChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2658061F2A61F1BD00F72F4A /* DGCharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +67,7 @@
 				263429A32A61F0C7008E808D /* Assets.xcassets */,
 				263429A52A61F0C7008E808D /* LaunchScreen.storyboard */,
 				263429A82A61F0C7008E808D /* Info.plist */,
+				265806202A61F1D600F72F4A /* ReusableLineChart.swift */,
 			);
 			path = "Reusable-Line-Chart";
 			sourceTree = "<group>";
@@ -83,6 +88,9 @@
 			dependencies = (
 			);
 			name = "Reusable-Line-Chart";
+			packageProductDependencies = (
+				2658061E2A61F1BD00F72F4A /* DGCharts */,
+			);
 			productName = "Reusable-Line-Chart";
 			productReference = 263429972A61F0C5008E808D /* Reusable-Line-Chart.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 2634298E2A61F0C5008E808D;
+			packageReferences = (
+				2658061D2A61F1BD00F72F4A /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = 263429982A61F0C5008E808D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,6 +152,7 @@
 				2634299F2A61F0C5008E808D /* ViewController.swift in Sources */,
 				2634299B2A61F0C5008E808D /* AppDelegate.swift in Sources */,
 				2634299D2A61F0C5008E808D /* SceneDelegate.swift in Sources */,
+				265806212A61F1D600F72F4A /* ReusableLineChart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2658061D2A61F1BD00F72F4A /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2658061E2A61F1BD00F72F4A /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2658061D2A61F1BD00F72F4A /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2634298F2A61F0C5008E808D /* Project object */;
 }

@@ -1,19 +1,40 @@
 //
 //  ViewController.swift
-//  Reusable-Line-Chart
+//  Reusable-Chart-Mock
 //
-//  Created by User-P2 on 7/14/23.
+//  Created by User-P2 on 7/13/23.
 //
 
 import UIKit
+import DGCharts
 
-class ViewController: UIViewController {
-
+final class ViewController: UIViewController {
+    
+    @IBOutlet private var lineChartView: ReusableLineChart!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setUI()
     }
-
-
+    
+    private func setUI() {
+        lineChartView.appendDataSet(label: "Legend 1", representativeColor: .green)
+        lineChartView.enableCircleValues()
+        lineChartView.delegate = self
+    }
 }
 
+// MARK: - Reusable ChartView Delegate
+
+extension ViewController: ChartViewDelegate {
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        chartView.highlightValue(nil)
+        
+        let alertController = UIAlertController(title: "Entry Tapped", message: "\(entry)", preferredStyle: .actionSheet)
+        let alertAction = UIAlertAction(title: "OK", style: .default)
+        
+        alertController.addAction(alertAction)
+        
+        present(alertController, animated: true)
+    }
+}
